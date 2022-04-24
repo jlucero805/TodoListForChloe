@@ -10,7 +10,7 @@ const pool = new Pool({
 
 @Injectable()
 export class AppService {
-  async getHello(): Promise<any> {
+  async getHello() {
     try {
       const client = await pool.connect();
       const result = await client.query('SELECT * FROM test_table;');
